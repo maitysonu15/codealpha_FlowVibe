@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowVibe — Real-Time Collaborative Project Management</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css?v=15.0">
+  <link rel="stylesheet" href="css/responsive.css?v=15.0">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh; background-color: #090D16; color: #F8FAFC;">
+
+  <!-- Navigation Bar -->
+  <header style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); background: rgba(9, 13, 22, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 50; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between;">
+      <a href="index.html" class="brand-logo" style="display: inline-flex; align-items: center; gap: 0.85rem; text-decoration: none;">
+        <div class="logo-mark">
+          <svg width="40" height="40" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ss-logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6366F1" />
+                <stop offset="50%" stop-color="#8B5CF6" />
+                <stop offset="100%" stop-color="#EC4899" />
+              </linearGradient>
+            </defs>
+            <rect width="36" height="36" rx="10" fill="url(#ss-logo-bg)" />
+            <path d="M0 10C0 4.47715 4.47715 0 10 0H26C31.5228 0 36 4.47715 36 10V18C36 18 24 12 0 18V10Z" fill="white" fill-opacity="0.22" />
+            <rect x="0.5" y="0.5" width="35" height="35" rx="9.5" stroke="white" stroke-opacity="0.3" />
+            <path d="M22.5 9.5L11.5 18H18L13.5 26.5L24.5 18H18L22.5 9.5Z" fill="#FFFFFF" />
+            <circle cx="27" cy="9" r="2.2" fill="#38BDF8" />
+            <circle cx="9" cy="27" r="2.2" fill="#F43F5E" />
+          </svg>
+        </div>
+        <span style="font-weight: 800; font-size: 1.55rem; color: #F8FAFC; letter-spacing: -0.025em;">Flow<span class="gradient-text">Vibe</span></span>
+      </a>
+
+      <nav style="display: flex; align-items: center; gap: 1.5rem;">
+        <a href="#features" class="nav-link-item" style="font-size: 1rem; font-weight: 600; color: #E2E8F0; text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.2s ease;">Features</a>
+        <a href="#workflow" class="nav-link-item" style="font-size: 1rem; font-weight: 600; color: #E2E8F0; text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.2s ease;">Workflow</a>
+        <a href="login.html" class="nav-btn-signin" id="nav-login-btn">Sign In</a>
+        <a href="register.html" class="nav-btn-signup" id="nav-register-btn">Get Started Free →</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="flex-grow: 1;">
+
+    <!-- Attractive Glossy Hero Section -->
+    <section style="max-width: 1200px; margin: 0 auto; padding: 5rem 1.5rem 3.5rem; text-align: center; position: relative;">
+      
+      <!-- Top Live Pulse Pill -->
+      <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 1rem; background: rgba(99, 102, 241, 0.12); border: 1px solid rgba(99, 102, 241, 0.35); border-radius: 9999px; font-size: 0.8125rem; font-weight: 600; color: #C7D2FE; margin-bottom: 1.75rem; box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);">
+        <span class="live-dot"></span>
+        <span>Real-Time Agile Collaboration Platform</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 style="font-size: clamp(2.4rem, 5vw, 4.25rem); font-weight: 800; line-height: 1.15; max-width: 920px; margin: 0 auto 1.5rem; letter-spacing: -0.03em; color: #F8FAFC;">
+        Organize, Assign, and Deliver Projects <br>
+        <span class="gradient-text">Together at Lightning Speed</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-secondary" style="font-size: clamp(1rem, 2vw, 1.25rem); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.6; color: #94A3B8;">
+        The all-in-one collaborative workspace with interactive Kanban boards, instant WebSocket synchronization, and focused task discussion threads.
+      </p>
+
+      <!-- Glossy CTA Buttons -->
+      <div style="display: flex; gap: 1.25rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 3.5rem;">
+        <a href="register.html" class="nav-btn-signup" style="padding: 0.95rem 2.4rem; font-size: 1.05rem; font-weight: 700; border-radius: 14px;">
+          Start Free Now →
+        </a>
+        <a href="login.html" class="nav-btn-signin" style="padding: 0.95rem 2.2rem; font-size: 1.05rem; font-weight: 700; border-radius: 14px;">
+          ⚡ Sign In to Workspace
+        </a>
+      </div>
+
+      <!-- Preview Mockup Card -->
+      <div class="card" style="padding: 1.5rem; max-width: 1060px; margin: 0 auto; border-radius: 20px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(99, 102, 241, 0.18);">
+        
+        <!-- Mockup Browser Header -->
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="width: 12px; height: 12px; border-radius: 50%; background: #EF4444; display: inline-block;"></span>
+            <span style="width: 12px; height: 12px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
+            <span style="width: 12px; height: 12px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
+            <span style="font-size: 0.8125rem; color: #64748B; margin-left: 0.5rem; font-family: var(--font-mono);">flowvibe.app/project/2.0-web-platform</span>
+          </div>
+          <div class="live-indicator">
+            <span class="live-dot"></span>
+            <span>Live Connected</span>
+          </div>
+        </div>
+
+        <!-- 3-Column Mini Kanban Preview -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; text-align: left;">
+          
+          <!-- Column 1: TO DO -->
+          <div style="background: rgba(15, 23, 42, 0.6); border-radius: 12px; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span style="font-weight: 700; font-size: 0.8125rem; color: var(--status-todo);">TO DO</span>
+              <span class="badge badge-todo">2</span>
+            </div>
+            
+            <div style="background: rgba(30, 41, 59, 0.75); padding: 0.875rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 0.65rem; transition: transform 0.2s ease;">
+              <span class="badge badge-priority-high" style="margin-bottom: 0.4rem; font-size: 0.65rem;">HIGH</span>
+              <div style="font-size: 0.875rem; font-weight: 600; color: #F8FAFC;">PostgreSQL Migration</div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.75rem; color: #64748B;">
+                <span>Due in 2 days</span>
+                <div class="avatar avatar-sm" style="background: #6366F1;">AC</div>
+              </div>
+            </div>
+
+            <div style="background: rgba(30, 41, 59, 0.75); padding: 0.875rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span class="badge badge-priority-low" style="margin-bottom: 0.4rem; font-size: 0.65rem;">LOW</span>
+              <div style="font-size: 0.875rem; font-weight: 600; color: #F8FAFC;">Mobile Viewport QA</div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.75rem; color: #64748B;">
+                <span>Due tomorrow</span>
+                <div class="avatar avatar-sm" style="background: #EC4899;">EL</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: IN PROGRESS -->
+          <div style="background: rgba(15, 23, 42, 0.6); border-radius: 12px; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span style="font-weight: 700; font-size: 0.8125rem; color: var(--status-prog);">IN PROGRESS</span>
+              <span class="badge badge-in-progress">2</span>
+            </div>
+
+            <div style="background: rgba(30, 41, 59, 0.75); padding: 0.875rem; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 0.65rem; box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);">
+              <span class="badge badge-priority-high" style="margin-bottom: 0.4rem; font-size: 0.65rem;">HIGH</span>
+              <div style="font-size: 0.875rem; font-weight: 600; color: #F8FAFC;">Drag & Drop Kanban Board</div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.75rem; color: var(--accent-cyan);">
+                <span>💬 3 Comments</span>
+                <div class="avatar avatar-sm" style="background: #10B981;">SM</div>
+              </div>
+            </div>
+
+            <div style="background: rgba(30, 41, 59, 0.75); padding: 0.875rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span class="badge badge-priority-medium" style="margin-bottom: 0.4rem; font-size: 0.65rem;">MEDIUM</span>
+              <div style="font-size: 0.875rem; font-weight: 600; color: #F8FAFC;">Task Discussion Threads</div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.75rem; color: #64748B;">
+                <span>Due Sep 18</span>
+                <div class="avatar avatar-sm" style="background: #F59E0B;">DK</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: DONE -->
+          <div style="background: rgba(15, 23, 42, 0.6); border-radius: 12px; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span style="font-weight: 700; font-size: 0.8125rem; color: var(--status-done);">DONE</span>
+              <span class="badge badge-done">2</span>
+            </div>
+
+            <div style="background: rgba(30, 41, 59, 0.75); padding: 0.875rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 0.65rem;">
+              <span class="badge badge-done" style="margin-bottom: 0.4rem; font-size: 0.65rem;">COMPLETED</span>
+              <div style="font-size: 0.875rem; font-weight: 600; color: #94A3B8; text-decoration: line-through;">Channels WebSocket Consumer</div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.75rem; color: var(--accent-emerald);">
+                <span>✓ Verified</span>
+                <div class="avatar avatar-sm" style="background: #6366F1;">AC</div>
+              </div>
+            </div>
+
+            <div style="background: rgba(30, 41, 59, 0.75); padding: 0.875rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span class="badge badge-done" style="margin-bottom: 0.4rem; font-size: 0.65rem;">COMPLETED</span>
+              <div style="font-size: 0.875rem; font-weight: 600; color: #94A3B8; text-decoration: line-through;">Glassmorphic Design Tokens</div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.75rem; color: var(--accent-emerald);">
+                <span>✓ Shipped</span>
+                <div class="avatar avatar-sm" style="background: #EC4899;">EL</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" style="max-width: 1200px; margin: 4rem auto; padding: 2rem 1.5rem;">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <h2 style="font-size: 2.25rem; margin-bottom: 0.75rem; color: #F8FAFC;">Built for High-Performing Teams</h2>
+        <p class="text-secondary" style="color: #94A3B8;">Everything required to organize tasks, assign roles, and stay in sync.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div class="card" style="padding: 1.75rem; border-radius: 16px;">
+          <div class="stat-icon stat-icon-indigo" style="margin-bottom: 1.25rem;">📊</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #F8FAFC;">Kanban Task Boards</h3>
+          <p class="text-secondary text-sm" style="line-height: 1.6; color: #94A3B8;">
+            Visualize workflows across To Do, In Progress, and Done. Effortlessly drag and drop cards or use keyboard/dropdown controls.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 1.75rem; border-radius: 16px;">
+          <div class="stat-icon stat-icon-cyan" style="margin-bottom: 1.25rem;">⚡</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #F8FAFC;">WebSocket Live Sync</h3>
+          <p class="text-secondary text-sm" style="line-height: 1.6; color: #94A3B8;">
+            Instant real-time updates powered by Django Channels. See task moves, new cards, and member edits live without page refreshes.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 1.75rem; border-radius: 16px;">
+          <div class="stat-icon stat-icon-emerald" style="margin-bottom: 1.25rem;">💬</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #F8FAFC;">Contextual Task Comments</h3>
+          <p class="text-secondary text-sm" style="line-height: 1.6; color: #94A3B8;">
+            Keep communications focused right where work happens. Team members can post, edit, and collaborate in task discussion threads.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="workflow" style="max-width: 1200px; margin: 4rem auto 6rem; padding: 2rem 1.5rem;">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 9999px; font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 1rem;">
+          ⚡ Streamlined Pipeline
+        </div>
+        <h2 style="font-size: 2.25rem; margin-bottom: 0.75rem; color: #F8FAFC;">How FlowVibe Powers Your Workflow</h2>
+        <p class="text-secondary" style="color: #94A3B8;">From backlog ideation to sprint delivery in one seamless real-time environment.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+        <div class="card" style="padding: 1.5rem; text-align: left; border-radius: 16px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--primary-gradient); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 1rem;">1</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #F8FAFC;">Scope & Backlog</h3>
+          <p class="text-secondary text-sm" style="line-height: 1.6; color: #94A3B8;">Create workspaces, define project scopes, set milestones, and organize backlogs with smart metadata.</p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; text-align: left; border-radius: 16px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #06B6D4, #3B82F6); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 1rem;">2</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #F8FAFC;">Visual Kanban</h3>
+          <p class="text-secondary text-sm" style="line-height: 1.6; color: #94A3B8;">Drag & drop tasks across customizable columns (To Do, In Progress, Done) with priority flags and tags.</p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; text-align: left; border-radius: 16px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #8B5CF6, #EC4899); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 1rem;">3</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #F8FAFC;">WebSocket Live Sync</h3>
+          <p class="text-secondary text-sm" style="line-height: 1.6; color: #94A3B8;">Zero-refresh updates across team members instantly via Django Channels bi-directional WebSockets.</p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; text-align: left; border-radius: 16px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #10B981, #059669); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 1rem;">4</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #F8FAFC;">Discussions & Ship</h3>
+          <p class="text-secondary text-sm" style="line-height: 1.6; color: #94A3B8;">Comment directly in task threads, discuss blockers with teammates, and hit release deadlines.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 2.5rem 1.5rem; text-align: center; background: rgba(15, 23, 42, 0.95);">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+      <a href="index.html" class="brand-logo" style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+        <div class="logo-mark">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="footer-logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6366F1" />
+                <stop offset="100%" stop-color="#EC4899" />
+              </linearGradient>
+            </defs>
+            <rect width="36" height="36" rx="10" fill="url(#footer-logo-bg)" />
+            <path d="M22.5 9.5L11.5 18H18L13.5 26.5L24.5 18H18L22.5 9.5Z" fill="#FFFFFF" />
+          </svg>
+        </div>
+        <span style="font-size: 1.1rem; color: #F8FAFC; font-weight: 800;">Flow<span class="gradient-text">Vibe</span></span>
+      </a>
+      <p class="text-muted text-xs" style="color: #64748B;">Full-Stack Project Management Platform • FlowVibe</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { auth } from './js/auth.js';
+    // If logged in, update navigation links to Dashboard
+    auth.getCurrentUser().then(user => {
+      if (user) {
+        const loginBtn = document.getElementById('nav-login-btn');
+        const regBtn = document.getElementById('nav-register-btn');
+        if (loginBtn) {
+          loginBtn.textContent = 'Dashboard';
+          loginBtn.href = 'dashboard.html';
+          loginBtn.className = 'btn btn-primary btn-sm';
+        }
+        if (regBtn) regBtn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

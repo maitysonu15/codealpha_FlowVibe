@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — FlowVibe</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css?v=17.0">
+  <link rel="stylesheet" href="css/responsive.css?v=17.0">
+</head>
+<body class="aurora-bg-wrap auth-page-container" style="background-color: #090D16; min-height: 100vh; padding: 2.5rem 1.25rem; box-sizing: border-box; display: flex; align-items: center; justify-content: center; overflow-y: auto;">
+
+  <!-- Ambient Glowing Background Orbs -->
+  <div class="aurora-orb aurora-orb-1" style="top: -140px; left: 12%;"></div>
+  <div class="aurora-orb aurora-orb-2" style="bottom: -140px; right: 12%;"></div>
+
+  <!-- Main Split Auth Card -->
+  <div class="auth-split-wrapper" style="max-width: 1040px; width: 100%; margin: auto; box-shadow: 0 35px 95px rgba(0, 0, 0, 0.92), 0 0 50px rgba(99, 102, 241, 0.3); border-radius: 24px; border: 1.5px solid rgba(255, 255, 255, 0.16); overflow: hidden; background: linear-gradient(155deg, rgba(20, 28, 48, 0.98) 0%, rgba(10, 14, 26, 0.99) 100%); backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); box-sizing: border-box; display: grid; grid-template-columns: 1.12fr 1fr;">
+    
+    <!-- Left Showcase Panel (Unified Live Workspace Showcase) -->
+    <div class="auth-showcase-panel" style="padding: 2.75rem 2.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.6rem; background: linear-gradient(145deg, rgba(24, 34, 58, 0.85) 0%, rgba(12, 18, 34, 0.98) 100%); border-right: 1.5px solid rgba(255, 255, 255, 0.1);">
+      
+      <!-- Top Branding & Value Proposition -->
+      <div>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.35rem;">
+          <a href="index.html" class="brand-logo" style="display: inline-flex; align-items: center; gap: 0.85rem; text-decoration: none;">
+            <div class="logo-mark" style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);">
+              <svg width="44" height="44" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="auth-logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#6366F1" />
+                    <stop offset="50%" stop-color="#8B5CF6" />
+                    <stop offset="100%" stop-color="#EC4899" />
+                  </linearGradient>
+                </defs>
+                <rect width="36" height="36" rx="10" fill="url(#auth-logo-bg)" />
+                <path d="M0 10C0 4.47715 4.47715 0 10 0H26C31.5228 0 36 4.47715 36 10V18C36 18 24 12 0 18V10Z" fill="white" fill-opacity="0.25" />
+                <rect x="0.5" y="0.5" width="35" height="35" rx="9.5" stroke="white" stroke-opacity="0.35" />
+                <path d="M22.5 9.5L11.5 18H18L13.5 26.5L24.5 18H18L22.5 9.5Z" fill="#FFFFFF" />
+                <circle cx="27" cy="9" r="2.2" fill="#38BDF8" />
+                <circle cx="9" cy="27" r="2.2" fill="#F43F5E" />
+              </svg>
+            </div>
+            <span style="font-size: 2.1rem; font-weight: 900; color: #FFFFFF; letter-spacing: -0.03em;">Flow<span class="gradient-text">Vibe</span></span>
+          </a>
+          <div style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 800; color: #10B981; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); padding: 4px 12px; border-radius: 9999px;">
+            <span style="width: 7px; height: 7px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+            <span>ENTERPRISE LIVE</span>
+          </div>
+        </div>
+
+        <h2 style="font-size: 2.15rem; font-weight: 900; line-height: 1.25; margin-bottom: 0.65rem; color: #FFFFFF; letter-spacing: -0.025em;">
+          The real-time workspace for <br>
+          <span class="gradient-text">high-velocity teams.</span>
+        </h2>
+        <p style="font-size: 1.05rem; line-height: 1.55; color: #CBD5E1; font-weight: 500; margin: 0;">
+          Sub-50ms live sync, drag-and-drop Kanban matrix, and contextual task threads for agile engineering teams.
+        </p>
+      </div>
+
+      <!-- Cohesive Live Product Canvas Showcase -->
+      <div style="background: rgba(15, 23, 42, 0.9); border: 1.5px solid rgba(99, 102, 241, 0.35); border-radius: 18px; padding: 1.35rem 1.45rem; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6); display: flex; flex-direction: column; gap: 1rem;">
+        
+        <!-- Board Header: Velocity & Shipped Badge -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <span style="font-size: 1rem;">⚡</span>
+            <span style="font-size: 0.95rem; font-weight: 800; color: #FFFFFF; letter-spacing: 0.02em;">Sprint 14 Matrix</span>
+          </div>
+          <span style="font-size: 0.82rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; background: rgba(16, 185, 129, 0.2); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.45);">92% SHIPPED</span>
+        </div>
+
+        <!-- Velocity Progress Bar -->
+        <div style="width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 9999px; overflow: hidden;">
+          <div style="width: 92%; height: 100%; background: linear-gradient(90deg, #6366F1, #38BDF8, #10B981); border-radius: 9999px;"></div>
+        </div>
+
+        <!-- 2 Live Mini Kanban Cards -->
+        <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+          <!-- Card 1 -->
+          <div style="background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 12px; padding: 0.75rem 0.95rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.2s ease;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #38BDF8; box-shadow: 0 0 8px #38BDF8;"></span>
+              <div>
+                <div style="color: #FFFFFF; font-size: 0.98rem; font-weight: 700;">WebSocket Multi-User Sync</div>
+                <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 600; margin-top: 1px;">🟣 In Progress • 3/4 Tasks Done</div>
+              </div>
+            </div>
+            <div class="avatar avatar-sm" style="background: #6366F1; width: 28px; height: 28px; font-size: 0.75rem; font-weight: 800;" title="Alex Chen">AC</div>
+          </div>
+
+          <!-- Card 2 -->
+          <div style="background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 12px; padding: 0.75rem 0.95rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.2s ease;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+              <div>
+                <div style="color: #FFFFFF; font-size: 0.98rem; font-weight: 700;">Drag-and-Drop Task Matrix</div>
+                <div style="font-size: 0.78rem; color: #10B981; font-weight: 600; margin-top: 1px;">✓ Ready for Production Review</div>
+              </div>
+            </div>
+            <div class="avatar avatar-sm" style="background: #10B981; width: 28px; height: 28px; font-size: 0.75rem; font-weight: 800;" title="Sarah Miller">SM</div>
+          </div>
+        </div>
+
+        <!-- Telemetry & Teammates Row -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 0.75rem;">
+          <div style="display: flex; align-items: center; gap: 0.65rem;">
+            <div class="avatar-group" style="display: flex;">
+              <div class="avatar avatar-sm" style="background: #6366F1; width: 26px; height: 26px; font-size: 0.7rem; font-weight: 800; margin-left: -5px;" title="Alex">AC</div>
+              <div class="avatar avatar-sm" style="background: #10B981; width: 26px; height: 26px; font-size: 0.7rem; font-weight: 800; margin-left: -5px;" title="Sarah">SM</div>
+              <div class="avatar avatar-sm" style="background: #EC4899; width: 26px; height: 26px; font-size: 0.7rem; font-weight: 800; margin-left: -5px;" title="Demo">DU</div>
+              <div class="avatar avatar-sm" style="background: #F59E0B; width: 26px; height: 26px; font-size: 0.7rem; font-weight: 800; margin-left: -5px;" title="David">DK</div>
+            </div>
+            <span style="font-size: 0.88rem; color: #CBD5E1; font-weight: 600;">4 teammates collaborating</span>
+          </div>
+          <span style="font-size: 0.88rem; color: #38BDF8; font-weight: 800; display: flex; align-items: center; gap: 4px;">⚡ 18ms live</span>
+        </div>
+      </div>
+
+      <!-- Capability Badges Footer -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.55rem; border-radius: 10px; font-size: 0.85rem; color: #FFFFFF; font-weight: 700;">
+          <span>⚡ &lt;50ms Sync</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.55rem; border-radius: 10px; font-size: 0.85rem; color: #FFFFFF; font-weight: 700;">
+          <span>📊 Live Kanban</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.55rem; border-radius: 10px; font-size: 0.85rem; color: #FFFFFF; font-weight: 700;">
+          <span>🔒 RBAC Security</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Form Panel (Clean, Focused, High-Conversion Auth) -->
+    <div class="auth-form-panel" style="padding: 2.75rem 2.85rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.35rem;">
+      
+      <!-- Top Heading -->
+      <div>
+        <h1 style="font-size: 2.35rem; font-weight: 900; margin-bottom: 0.35rem; color: #FFFFFF; letter-spacing: -0.025em; line-height: 1.2;">Welcome back</h1>
+        <p style="font-size: 1.08rem; color: #94A3B8; font-weight: 500; margin: 0; line-height: 1.45;">Sign in to access your projects, tasks, and real-time boards.</p>
+      </div>
+
+      <!-- Google OAuth Firebase Button -->
+      <button type="button" id="btn-google-login" style="width: 100%; height: 52px; background: rgba(255, 255, 255, 0.08); border: 1.5px solid rgba(255, 255, 255, 0.2); border-radius: 13px; color: #FFFFFF; font-size: 1.08rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 0.75rem; cursor: pointer; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 18px rgba(0,0,0,0.35);">
+        <svg width="22" height="22" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+        </svg>
+        <span>Continue with Google</span>
+      </button>
+
+      <!-- Divider -->
+      <div style="display: flex; align-items: center; gap: 0.85rem; margin: 0.15rem 0;">
+        <div style="flex-grow: 1; height: 1px; background: rgba(255, 255, 255, 0.12);"></div>
+        <span class="text-muted text-xs" style="text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.82rem; color: #94A3B8; font-weight: 800;">or sign in with email</span>
+        <div style="flex-grow: 1; height: 1px; background: rgba(255, 255, 255, 0.12);"></div>
+      </div>
+
+      <!-- Inline Glossy Error Alert -->
+      <div id="login-error-alert" style="display: none; padding: 0.75rem 1rem; border-radius: 12px; font-size: 0.98rem; font-weight: 700; margin-bottom: 0.4rem; background: rgba(244, 63, 94, 0.18); border: 1.5px solid rgba(244, 63, 94, 0.45); color: #FECDD3; text-align: left; align-items: center; gap: 0.65rem;">
+        <span style="font-size: 1.15rem;">⚠️</span>
+        <span id="login-error-text">Please enter both username/email and password.</span>
+      </div>
+
+      <!-- Credentials Form -->
+      <form id="login-form" novalidate style="display: flex; flex-direction: column; gap: 0.9rem;">
+        <div class="form-group" style="margin-bottom: 0;">
+          <label for="username-input" class="form-label" style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.35rem; display: block; text-align: left;">Username or Email</label>
+          <div class="auth-input-wrapper" style="position: relative;">
+            <span class="auth-input-icon" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #818CF8; pointer-events: none; display: flex;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            <input 
+              type="text" 
+              id="username-input" 
+              class="form-input auth-input font-bold" 
+              placeholder="Enter username or email" 
+              required 
+              autocomplete="username"
+              style="width: 100%; height: 50px; font-size: 1.1rem; font-weight: 600; padding-left: 3.1rem !important; border-radius: 12px; background: rgba(15, 23, 42, 0.92); border: 1.5px solid rgba(255, 255, 255, 0.18); color: white; box-sizing: border-box;"
+            >
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+            <label for="password-input" class="form-label" style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0;">Password</label>
+            <span style="font-size: 0.92rem; color: #818CF8; cursor: pointer; font-weight: 700;" onclick="showToast('For demo accounts, use password: password123', 'info')">Forgot password?</span>
+          </div>
+          <div class="auth-input-wrapper" style="position: relative;">
+            <span class="auth-input-icon" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #818CF8; pointer-events: none; display: flex;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input 
+              type="password" 
+              id="password-input" 
+              class="form-input auth-input" 
+              placeholder="Enter your password" 
+              required 
+              autocomplete="current-password"
+              style="width: 100%; height: 50px; font-size: 1.1rem; font-weight: 600; padding-left: 3.1rem !important; padding-right: 3.1rem !important; border-radius: 12px; background: rgba(15, 23, 42, 0.92); border: 1.5px solid rgba(255, 255, 255, 0.18); color: white; box-sizing: border-box;"
+            >
+            <button type="button" class="password-toggle-btn" id="toggle-pwd-btn" title="Show / Hide Password" tabindex="-1" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #CBD5E1; cursor: pointer; padding: 5px; display: flex; align-items: center;">
+              <svg id="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Hyper-Glossy Sign In Button -->
+        <button type="submit" id="login-submit-btn" class="nav-btn-signup" style="width: 100%; height: 54px; font-size: 1.2rem; font-weight: 900; margin-top: 0.35rem; border-radius: 14px; cursor: pointer; letter-spacing: -0.01em; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 32px rgba(99, 102, 241, 0.55), inset 0 1.5px 2px rgba(255, 255, 255, 0.45); transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);">
+          <span id="btn-text">Sign In to Workspace →</span>
+        </button>
+      </form>
+
+      <!-- Sleek 1-Row Quick Access Bar -->
+      <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 13px; padding: 0.65rem 0.85rem; display: flex; align-items: center; justify-content: space-between; gap: 0.65rem; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 0.45rem; font-size: 0.82rem; font-weight: 800; color: #818CF8; text-transform: uppercase; letter-spacing: 0.04em;">
+          <span>⚡ Direct Access:</span>
+        </div>
+        <button type="button" onclick="quickLogin('flowvibe', 'flowvibe')" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.3)); border: 1px solid rgba(168, 85, 247, 0.5); color: #FFFFFF; font-size: 0.88rem; font-weight: 800; padding: 6px 14px; border-radius: 8px; cursor: pointer; transition: all 0.2s;" title="Instant Workspace Access">
+          🚀 Enter Workspace
+        </button>
+      </div>
+
+      <!-- Footer Account Link -->
+      <div style="text-align: center; font-size: 1rem; color: #94A3B8; font-weight: 500;">
+        <span>Don't have an account?</span>
+        <a href="register.html" style="color: #818CF8; font-weight: 800; margin-left: 0.35rem; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Create Account Free →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module">
+    import { auth } from './js/auth.js';
+    import { firebaseAuthService } from './js/firebase-auth.js';
+    import { showToast } from './js/api.js';
+
+    // Show logout toast if redirected from logout
+    try {
+      if (sessionStorage.getItem('flowvibe_logout_toast')) {
+        sessionStorage.removeItem('flowvibe_logout_toast');
+        showToast('Logged out successfully.', 'info');
+      }
+    } catch (e) {}
+
+    // Redirect if already logged in
+    auth.redirectIfAuth();
+
+    const loginForm = document.getElementById('login-form');
+    const submitBtn = document.getElementById('login-submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const googleBtn = document.getElementById('btn-google-login');
+    const usernameInput = document.getElementById('username-input');
+    const passwordInput = document.getElementById('password-input');
+    const togglePwdBtn = document.getElementById('toggle-pwd-btn');
+    const eyeIcon = document.getElementById('eye-icon');
+    const errorAlert = document.getElementById('login-error-alert');
+    const errorText = document.getElementById('login-error-text');
+
+    function showError(msg) {
+      if (errorAlert && errorText) {
+        if (typeof msg === 'string' && (msg.includes('unauthorized-domain') || msg.includes('127.0.0.1') || msg.includes('Domain unauthorized'))) {
+          errorText.innerHTML = `
+            <div>
+              <div style="font-weight: 800; margin-bottom: 4px;">Firebase OAuth Domain Notice</div>
+              <div style="font-size: 0.88rem; opacity: 0.95; line-height: 1.4; margin-bottom: 8px;">
+                Firebase Google Sign-In requires <strong>localhost</strong> by default. Click below to switch to localhost:8000:
+              </div>
+              <button type="button" onclick="window.location.href=window.location.href.replace('127.0.0.1', 'localhost')" style="background: #6366F1; color: white; border: none; padding: 6px 14px; border-radius: 8px; font-weight: 800; cursor: pointer; font-size: 0.85rem; box-shadow: 0 2px 10px rgba(99,102,241,0.4);">
+                ⚡ Switch to http://localhost:8000
+              </button>
+            </div>
+          `;
+        } else {
+          errorText.textContent = msg;
+        }
+        errorAlert.style.display = 'flex';
+      }
+      showToast(msg, 'error');
+    }
+
+    function hideError() {
+      if (errorAlert) {
+        errorAlert.style.display = 'none';
+      }
+    }
+
+    // Hide error alert on user typing
+    usernameInput.addEventListener('input', hideError);
+    passwordInput.addEventListener('input', hideError);
+
+    // Toggle Password Visibility
+    if (togglePwdBtn) {
+      togglePwdBtn.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        eyeIcon.innerHTML = isPassword 
+          ? '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>'
+          : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
+      });
+    }
+
+    // Google Sign-In with Firebase
+    if (googleBtn) {
+      googleBtn.addEventListener('click', async () => {
+        hideError();
+
+        // If accessed via 127.0.0.1, auto-switch to localhost:8000 where Firebase is authorized by default
+        if (window.location.hostname === '127.0.0.1') {
+          const localhostUrl = window.location.href.replace('127.0.0.1', 'localhost');
+          showToast('Switching to localhost:8000 for Google OAuth...', 'info');
+          setTimeout(() => {
+            window.location.href = localhostUrl;
+          }, 350);
+          return;
+        }
+
+        const originalText = googleBtn.innerHTML;
+        googleBtn.disabled = true;
+        googleBtn.innerHTML = '<span class="spinner" style="vertical-align: middle; margin-right: 8px;"></span> Connecting to Google...';
+
+        try {
+          const user = await firebaseAuthService.signInWithGoogle();
+          if (user) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const redirect = urlParams.get('redirect') || 'dashboard.html';
+            setTimeout(() => {
+              window.location.href = redirect;
+            }, 400);
+          } else {
+            googleBtn.disabled = false;
+            googleBtn.innerHTML = originalText;
+          }
+        } catch (err) {
+          googleBtn.disabled = false;
+          googleBtn.innerHTML = originalText;
+          showError(err.message || 'Google authentication failed.');
+        }
+      });
+    }
+
+    // Quick Login Function for 1-Click Demo Cards
+    window.quickLogin = async (username, password) => {
+      hideError();
+      usernameInput.value = username;
+      passwordInput.value = password;
+
+      submitBtn.disabled = true;
+      btnText.innerHTML = '<span class="spinner" style="vertical-align: middle; margin-right: 8px;"></span> Authenticating...';
+
+      try {
+        await auth.login(username, password);
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirect = urlParams.get('redirect') || 'dashboard.html';
+        setTimeout(() => {
+          window.location.href = redirect;
+        }, 400);
+      } catch (err) {
+        submitBtn.disabled = false;
+        btnText.textContent = 'Sign In to Workspace →';
+        showError(err.message || 'Login failed. Please check your credentials.');
+      }
+    };
+
+    // Manual Form Submission
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      hideError();
+
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value;
+
+      if (!username) {
+        showError('Please enter your username or email.');
+        usernameInput.focus();
+        return;
+      }
+
+      if (!password) {
+        showError('Please enter your password.');
+        passwordInput.focus();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      btnText.innerHTML = '<span class="spinner" style="vertical-align: middle; margin-right: 8px;"></span> Signing in...';
+
+      try {
+        await auth.login(username, password);
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirect = urlParams.get('redirect') || 'dashboard.html';
+        setTimeout(() => {
+          window.location.href = redirect;
+        }, 400);
+      } catch (err) {
+        submitBtn.disabled = false;
+        btnText.textContent = 'Sign In to Workspace →';
+        const msg = err.message || 'Invalid credentials. Check your username/password or click "Create Account Free" below.';
+        showError(msg);
+      }
+    });
+  </script>
+</body>
+</html>

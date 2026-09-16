@@ -1,0 +1,15 @@
+{
+  "name": "flowvibe",
+  "version": "1.0.0",
+  "description": "FlowVibe - Collaborative Project Management Platform",
+  "scripts": {
+    "dev": "python teamflow/backend/manage.py runserver 127.0.0.1:8000",
+    "start": "python teamflow/backend/manage.py runserver 127.0.0.1:8000",
+    "test": "python teamflow/backend/manage.py test users projects tasks comments",
+    "seed": "python teamflow/backend/manage.py seed_data",
+    "migrate": "python teamflow/backend/manage.py migrate"
+  },
+  "keywords": ["flowvibe", "django", "kanban", "project-management", "realtime", "websockets"],
+  "author": "",
+  "license": "MIT"
+}

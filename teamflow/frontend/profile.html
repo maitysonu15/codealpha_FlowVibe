@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile — FlowVibe</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css?v=17.0">
+  <link rel="stylesheet" href="css/datepicker.css?v=17.0">
+  <link rel="stylesheet" href="css/responsive.css?v=17.0">
+</head>
+<body>
+
+  <div class="app-layout">
+    <!-- Sidebar Overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleMobileSidebar()"></div>
+
+    <!-- App Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="brand-logo" title="FlowVibe Workspace">
+          <div class="logo-mark">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="prof-logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#6366F1" />
+                  <stop offset="50%" stop-color="#8B5CF6" />
+                  <stop offset="100%" stop-color="#EC4899" />
+                </linearGradient>
+              </defs>
+              <rect width="36" height="36" rx="10" fill="url(#prof-logo-bg)" />
+              <path d="M0 10C0 4.47715 4.47715 0 10 0H26C31.5228 0 36 4.47715 36 10V18C36 18 24 12 0 18V10Z" fill="white" fill-opacity="0.2" />
+              <rect x="0.5" y="0.5" width="35" height="35" rx="9.5" stroke="white" stroke-opacity="0.3" />
+              <path d="M22.5 9.5L11.5 18H18L13.5 26.5L24.5 18H18L22.5 9.5Z" fill="#FFFFFF" />
+              <circle cx="27" cy="9" r="2.2" fill="#38BDF8" />
+              <circle cx="9" cy="27" r="2.2" fill="#F43F5E" />
+            </svg>
+          </div>
+          <span class="brand-name">Flow<span class="gradient-text">Vibe</span></span>
+        </a>
+        <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" onclick="toggleSidebarCollapse()" title="Toggle Sidebar (Collapse / Expand)" aria-label="Toggle Sidebar">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="11 17 6 12 11 7"></polyline>
+            <polyline points="18 17 13 12 18 7"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">
+          <span class="section-indicator"></span>
+          <span>WORKSPACE</span>
+        </div>
+        <a href="dashboard.html" class="nav-item" title="Dashboard">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="9" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="5" rx="1.5"></rect>
+            <rect x="14" y="12" width="7" height="9" rx="1.5"></rect>
+            <rect x="3" y="16" width="7" height="5" rx="1.5"></rect>
+          </svg>
+          <span class="nav-label">Dashboard</span>
+        </a>
+        <a href="profile.html" class="nav-item active" title="My Profile">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span class="nav-label">My Profile</span>
+          <span class="nav-badge-dot" title="Active"></span>
+        </a>
+
+        <!-- Live Status Widget -->
+        <div class="sidebar-status-widget">
+          <div class="status-widget-header">
+            <span class="status-pulse-dot"></span>
+            <span>Live Cloud Engine</span>
+          </div>
+          <div class="status-widget-details">WebSocket: <strong>Connected (38ms)</strong></div>
+          <div class="status-widget-bar">
+            <div class="status-widget-bar-fill"></div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card" onclick="window.location.href='profile.html'" title="View Your Profile">
+          <div class="avatar-wrap">
+            <div class="avatar" id="sidebar-user-avatar">U</div>
+            <span class="user-online-badge" title="Online"></span>
+          </div>
+          <div class="user-mini-info">
+            <div class="user-mini-name" id="sidebar-user-name">Loading...</div>
+            <div class="user-mini-role" id="sidebar-user-role">Team Member</div>
+          </div>
+        </div>
+
+        <button class="btn-logout-sidebar btn-logout" title="Sign Out of FlowVibe">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Sign Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="app-main">
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" onclick="toggleSidebarCollapse()" title="Toggle Sidebar" aria-label="Toggle Sidebar">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+          </button>
+          <h1 class="text-xl font-bold">User Profile & Account</h1>
+        </div>
+
+        <div class="topbar-right">
+          <div style="display: flex; align-items: center; gap: 0.95rem;">
+            <div class="avatar" id="topbar-user-avatar" style="width: 40px; height: 40px; font-size: 0.95rem; font-weight: 800; border: 2px solid rgba(255,255,255,0.25);">U</div>
+            <span class="user-display-name" id="topbar-user-name">User</span>
+            <button class="btn-logout" title="Sign Out">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+              <span>Logout</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <main class="page-content" style="max-width: 900px;">
+        <!-- User Profile Banner Card -->
+        <section class="card" style="margin-bottom: 2rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+          <div class="avatar avatar-xl" id="profile-main-avatar" style="font-size: 1.75rem;">U</div>
+          
+          <div style="flex-grow: 1;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem; flex-wrap: wrap;">
+              <h2 class="text-2xl font-bold" id="profile-display-name">Loading...</h2>
+              <span class="badge" style="background: rgba(99, 102, 241, 0.15); color: var(--primary); border: 1px solid rgba(99, 102, 241, 0.3);" id="profile-role-badge">
+                Team Member
+              </span>
+            </div>
+            <p class="text-secondary text-sm" id="profile-username-email">@username • email@domain.com</p>
+            <p class="text-muted text-xs" style="margin-top: 0.35rem;" id="profile-joined-date">Joined: --</p>
+          </div>
+        </section>
+
+        <!-- Stats Overview -->
+        <section class="stats-grid" style="margin-bottom: 2rem;">
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-indigo">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-value" id="profile-stat-owned">0</div>
+              <div class="stat-label">Projects Owned</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-cyan">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-value" id="profile-stat-member">0</div>
+              <div class="stat-label">Projects Joined</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-amber">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-value" id="profile-stat-assigned">0</div>
+              <div class="stat-label">Assigned Tasks</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-emerald">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-value" id="profile-stat-completed">0</div>
+              <div class="stat-label">Tasks Completed</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Profile Forms Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+          <!-- Edit Information Form -->
+          <div class="card">
+            <h3 class="text-lg font-bold" style="margin-bottom: 1.25rem;">Personal Information</h3>
+            <form id="edit-profile-form">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                <div class="form-group">
+                  <label for="prof-first-name" class="form-label">First Name</label>
+                  <input type="text" id="prof-first-name" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label for="prof-last-name" class="form-label">Last Name</label>
+                  <input type="text" id="prof-last-name" class="form-input">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="prof-email" class="form-label">Email Address</label>
+                <input type="email" id="prof-email" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label for="prof-role" class="form-label">Role Title</label>
+                <input type="text" id="prof-role" class="form-input" placeholder="e.g. Lead Designer">
+              </div>
+
+              <div class="form-group">
+                <label for="prof-bio" class="form-label">Bio / Notes</label>
+                <textarea id="prof-bio" class="form-textarea" placeholder="Tell the team a little about yourself..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                Save Profile Changes
+              </button>
+            </form>
+          </div>
+
+          <!-- Change Password Form -->
+          <div class="card">
+            <h3 class="text-lg font-bold" style="margin-bottom: 1.25rem;">Security & Password</h3>
+            <form id="change-password-form">
+              <div class="form-group">
+                <label for="pwd-current" class="form-label">Current Password *</label>
+                <input type="password" id="pwd-current" class="form-input" required autocomplete="current-password">
+              </div>
+
+              <div class="form-group">
+                <label for="pwd-new" class="form-label">New Password *</label>
+                <input type="password" id="pwd-new" class="form-input" placeholder="Minimum 6 characters" required autocomplete="new-password">
+              </div>
+
+              <div class="form-group">
+                <label for="pwd-confirm" class="form-label">Confirm New Password *</label>
+                <input type="password" id="pwd-confirm" class="form-input" required autocomplete="new-password">
+              </div>
+
+              <button type="submit" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">
+                Update Password
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Mobile Sidebar Toggle Helper -->
+  <script>
+    function toggleMobileSidebar() {
+      const sidebar = document.getElementById('app-sidebar');
+      const overlay = document.getElementById('sidebar-overlay');
+      if (sidebar && overlay) {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('active');
+      }
+    }
+  </script>
+
+  <script type="module">
+    import { auth } from './js/auth.js';
+    import { api, showToast, escapeHtml } from './js/api.js';
+
+    let user = null;
+
+    async function initProfile() {
+      user = await auth.requireAuth();
+      if (!user) return;
+
+      populateProfileData(user);
+      setupForms();
+    }
+
+    function populateProfileData(u) {
+      document.getElementById('profile-display-name').textContent = u.first_name ? `${u.first_name} ${u.last_name}` : u.username;
+      document.getElementById('profile-username-email').textContent = `@${u.username} • ${u.email}`;
+      document.getElementById('profile-role-badge').textContent = u.role_title || 'Team Member';
+      
+      const avatarEl = document.getElementById('profile-main-avatar');
+      if (avatarEl) {
+        avatarEl.textContent = u.initials;
+        avatarEl.style.backgroundColor = u.avatar_color || '#6366F1';
+      }
+
+      const joinedDate = u.date_joined ? new Date(u.date_joined).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : '--';
+      document.getElementById('profile-joined-date').textContent = `Member since: ${joinedDate}`;
+
+      // Populate form fields
+      document.getElementById('prof-first-name').value = u.first_name || '';
+      document.getElementById('prof-last-name').value = u.last_name || '';
+      document.getElementById('prof-email').value = u.email || '';
+      document.getElementById('prof-role').value = u.role_title || '';
+      document.getElementById('prof-bio').value = u.bio || '';
+
+      // Stats
+      const stats = u.stats || {};
+      document.getElementById('profile-stat-owned').textContent = stats.owned_projects_count || 0;
+      document.getElementById('profile-stat-member').textContent = stats.member_projects_count || 0;
+      document.getElementById('profile-stat-assigned').textContent = stats.assigned_tasks_count || 0;
+      document.getElementById('profile-stat-completed').textContent = stats.completed_tasks_count || 0;
+    }
+
+    function setupForms() {
+      // Edit Profile Form
+      document.getElementById('edit-profile-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const first_name = document.getElementById('prof-first-name').value.trim();
+        const last_name = document.getElementById('prof-last-name').value.trim();
+        const email = document.getElementById('prof-email').value.trim();
+        const role_title = document.getElementById('prof-role').value.trim();
+        const bio = document.getElementById('prof-bio').value.trim();
+
+        try {
+          const updated = await api.patch('/auth/user/', {
+            first_name,
+            last_name,
+            email,
+            role_title,
+            bio
+          });
+          user = await auth.getCurrentUser(true);
+          populateProfileData(user);
+          auth.renderUserNav(user);
+          showToast('Profile updated successfully!', 'success');
+        } catch (err) {
+          showToast(err.message || 'Failed to update profile.', 'error');
+        }
+      };
+
+      // Change Password Form
+      document.getElementById('change-password-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const old_password = document.getElementById('pwd-current').value;
+        const new_password = document.getElementById('pwd-new').value;
+        const confirm_password = document.getElementById('pwd-confirm').value;
+
+        if (new_password.length < 6) {
+          showToast('New password must be at least 6 characters.', 'warning');
+          return;
+        }
+
+        if (new_password !== confirm_password) {
+          showToast('New passwords do not match.', 'warning');
+          return;
+        }
+
+        try {
+          await api.post('/auth/password/', {
+            old_password,
+            new_password
+          });
+          document.getElementById('change-password-form').reset();
+          showToast('Password changed successfully!', 'success');
+        } catch (err) {
+          showToast(err.message || 'Failed to change password.', 'error');
+        }
+      };
+    }
+
+    document.addEventListener('DOMContentLoaded', initProfile);
+  </script>
+</body>
+</html>

@@ -1,0 +1,526 @@
+/* ==============================================================================
+   FlowVibe Ultra-Glossy Glassmorphic Datepicker Styles
+   ============================================================================== */
+
+/* Trigger Input Wrapper */
+.sync-datepicker-wrap {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.sync-datepicker-input-hidden {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Custom Display Trigger Button / Field */
+.sync-datepicker-trigger {
+  width: 100%;
+  height: 44px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  user-select: none;
+  backdrop-filter: blur(12px);
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sync-datepicker-trigger:hover {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 14px rgba(99, 102, 241, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.sync-datepicker-trigger.active,
+.sync-datepicker-trigger:focus-visible {
+  border-color: #818CF8;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.35), 0 0 20px rgba(99, 102, 241, 0.3);
+  outline: none;
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.sync-datepicker-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sync-datepicker-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.25));
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #818CF8;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.sync-datepicker-trigger:hover .sync-datepicker-icon {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(236, 72, 153, 0.3));
+  border-color: rgba(99, 102, 241, 0.6);
+  color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+.sync-datepicker-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #CBD5E1;
+  letter-spacing: -0.01em;
+}
+
+.sync-datepicker-text.has-value {
+  color: #F8FAFC;
+  font-weight: 700;
+}
+
+.sync-datepicker-text.placeholder {
+  color: #64748B;
+  font-weight: 500;
+}
+
+.sync-datepicker-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.sync-datepicker-clear-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  color: #FDA4AF;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.sync-datepicker-clear-btn:hover {
+  background: #F43F5E;
+  color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(244, 63, 94, 0.6);
+  transform: scale(1.1);
+}
+
+.sync-datepicker-chevron {
+  color: #64748B;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sync-datepicker-trigger.active .sync-datepicker-chevron {
+  transform: rotate(180deg);
+  color: #818CF8;
+}
+
+/* Floating Glass Calendar Modal / Popup */
+.sync-calendar-popup {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 330px;
+  background: linear-gradient(165deg, rgba(30, 41, 59, 0.97) 0%, rgba(15, 23, 42, 0.99) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85), 0 0 35px rgba(99, 102, 241, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  z-index: 99999;
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-sizing: border-box;
+  animation: calendarPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  user-select: none;
+}
+
+.sync-calendar-popup.open {
+  display: flex;
+}
+
+@keyframes calendarPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Preset Chips Bar */
+.calendar-presets-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  overflow-x: auto;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  scrollbar-width: none;
+}
+
+.calendar-presets-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.calendar-preset-chip {
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #CBD5E1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.calendar-preset-chip:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3));
+  border-color: rgba(99, 102, 241, 0.6);
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Calendar Header & Month Navigation */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calendar-month-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.calendar-month-selector:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+}
+
+.calendar-month-label {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.calendar-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.calendar-nav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.calendar-nav-btn:hover {
+  background: rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.6);
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+  transform: scale(1.05);
+}
+
+/* Weekday Label Row */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+  text-align: center;
+}
+
+.calendar-weekday {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #818CF8;
+  padding: 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Days Grid (42 cells: 7x6) */
+.calendar-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day-cell {
+  aspect-ratio: 1 / 1;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #E2E8F0;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+.calendar-day-cell:hover:not(.empty):not(.disabled) {
+  background: rgba(99, 102, 241, 0.25);
+  border-color: rgba(99, 102, 241, 0.5);
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+/* Day in Previous/Next Month */
+.calendar-day-cell.other-month {
+  color: #475569;
+  opacity: 0.5;
+}
+
+.calendar-day-cell.other-month:hover {
+  opacity: 0.9;
+}
+
+/* Today's Day Cell */
+.calendar-day-cell.today {
+  border-color: rgba(56, 189, 248, 0.6);
+  background: rgba(56, 189, 248, 0.1);
+  font-weight: 800;
+  color: #38BDF8;
+}
+
+.calendar-day-cell.today::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #38BDF8;
+  box-shadow: 0 0 6px #38BDF8;
+}
+
+/* Selected Day Cell - Hyper-Glossy */
+.calendar-day-cell.selected {
+  background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%) !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.65), 0 0 14px rgba(236, 72, 153, 0.45) !important;
+  transform: scale(1.08);
+  z-index: 3;
+}
+
+.calendar-day-cell.selected::after {
+  background: #FFFFFF !important;
+  box-shadow: 0 0 6px #FFFFFF !important;
+}
+
+/* Month & Year Jump Overlay */
+.calendar-jump-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.96);
+  border-radius: 16px;
+  padding: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  animation: calendarPopIn 0.2s ease;
+}
+
+.calendar-jump-overlay.open {
+  display: flex;
+}
+
+.calendar-jump-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.calendar-jump-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.calendar-months-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.calendar-month-btn {
+  padding: 0.55rem 0.35rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #E2E8F0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.calendar-month-btn:hover {
+  background: rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.6);
+  color: #FFFFFF;
+  transform: scale(1.04);
+}
+
+.calendar-month-btn.selected {
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  font-weight: 800;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+}
+
+/* Year Stepper */
+.calendar-year-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.4rem;
+}
+
+.calendar-year-val {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+/* Footer Actions */
+.calendar-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.65rem;
+  margin-top: 0.2rem;
+}
+
+.calendar-footer-left {
+  font-size: 0.78rem;
+  color: #94A3B8;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 140px;
+}
+
+.calendar-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.calendar-btn-clear {
+  padding: 0.35rem 0.75rem;
+  border-radius: 7px;
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  color: #FDA4AF;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.calendar-btn-clear:hover {
+  background: #F43F5E;
+  color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(244, 63, 94, 0.5);
+}
+
+.calendar-btn-done {
+  padding: 0.35rem 0.95rem;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.4);
+}
+
+.calendar-btn-done:hover {
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.6);
+  transform: translateY(-1px);
+}
